@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="page-header page-header--broadcast">
+  <div class="site-container-1340">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p>{{ . }}</p>
+    {{ end }}
+  </div>
+</section>
+
+<section class="about-content-section">
+  <div class="site-container-1340">
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}

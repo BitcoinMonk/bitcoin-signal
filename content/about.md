@@ -1,14 +1,11 @@
 ---
-title: 'About'
-description: 'A Bitcoin-only publication delivering signal over noise—by the plebs, for the plebs'
+title: 'About The Signal'
+description: 'Broadcasting from the underground — by the plebs, for the plebs'
+layout: about
 priority: 1.0
 cta: false
 url: '/about/'
-js: ['about.js']
-css: ['about.css']
 ---
-
-# About The Bitcoin Signal
 
 **The Bitcoin Signal** is my culture node—a place where normal Bitcoiners can find out what's really going on in Bitcoin, without the noise.
 

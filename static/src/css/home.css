@@ -1,82 +1,259 @@
-/* Hero Section */
+/* ============================================
+   BITCOIN SIGNAL - HOME PAGE
+   "The signal emerges from the void"
+   ============================================ */
+
+/* === HERO SECTION === */
 .hero-section {
-  padding: 80px 0 40px;
+  padding: 100px 0 80px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated grid background */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(247, 147, 26, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 147, 26, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Radial gradient fade from center */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(8, 8, 8, 0.5) 50%,
+    rgba(8, 8, 8, 0.95) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-section .site-container-1340 {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .section-header {
+  margin: 0;
 }
 
 .hero-section h1 {
-  font-size: 48px;
-  line-height: 56px;
-  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  color: var(--white);
+  position: relative;
+  display: inline-block;
+}
+
+/* The orange glow on "SIGNAL" - wrap in span for effect */
+.hero-section h1 .signal {
+  color: var(--bitcoin-orange);
+  text-shadow: var(--glow-medium);
 }
 
 @media (min-width: 768px) {
   .hero-section h1 {
-    font-size: 64px;
-    line-height: 72px;
+    font-size: 72px;
+  }
+
+  .hero-section {
+    padding: 140px 0 100px;
   }
 }
 
+@media (min-width: 1024px) {
+  .hero-section h1 {
+    font-size: 88px;
+  }
+}
+
+/* Tagline with terminal-style treatment */
 .hero-section p {
-  font-size: 20px;
-  color: var(--text-secondary);
-}
-
-/* Latest Articles Section */
-.latest-articles {
-  padding: 40px 0;
-}
-
-.latest-articles h2,
-.latest-articles .site-container-1340 > h2 {
-  font-size: 32px;
-  margin-bottom: 32px;
-  text-align: center !important;
-}
-
-/* Support Section */
-.support-section {
-  padding: 60px 0;
-  margin-top: 40px;
-}
-
-.support-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 40px;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.support-card h3 {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-.support-card p {
-  margin-bottom: 16px;
-}
-
-.support-card .lightning-info {
+  font-family: var(--font-tech);
+  font-size: 16px;
+  color: var(--gray);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   margin-top: 24px;
 }
 
+.hero-section p::before {
+  content: '// ';
+  color: var(--bitcoin-orange);
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .hero-section p {
+    font-size: 18px;
+  }
+}
+
+/* === LATEST ARTICLES SECTION === */
+.latest-articles {
+  padding: 60px 0 80px;
+  position: relative;
+}
+
+/* Section title with decorative elements */
+.latest-articles h2,
+.latest-articles .site-container-1340 > h2 {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-align: center !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+}
+
+.latest-articles h2::before,
+.latest-articles h2::after {
+  content: '//';
+  color: var(--bitcoin-orange);
+  opacity: 0.5;
+  margin: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .latest-articles h2 {
+    font-size: 28px;
+  }
+}
+
+/* === SUPPORT SECTION === */
+.support-section {
+  padding: 80px 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-dark);
+}
+
+.support-card {
+  background-color: var(--concrete);
+  border: 1px solid var(--border-dark);
+  border-left: 3px solid var(--bitcoin-orange);
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Scan line effect on support card */
+.support-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(247, 147, 26, 0.02) 2px,
+    rgba(247, 147, 26, 0.02) 4px
+  );
+}
+
+.support-card h3 {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.support-card p {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.support-card .lightning-info {
+  margin-top: 32px;
+  position: relative;
+}
+
 .lightning-address {
+  font-family: var(--font-mono);
+  font-size: 14px;
   color: var(--bitcoin-orange);
   text-decoration: none;
-  font-family: 'Courier New', monospace;
-  font-size: 16px;
   display: inline-block;
-  margin-top: 8px;
-  padding: 8px 16px;
-  background-color: var(--bg-secondary);
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background-color: var(--steel);
+  border: 1px solid var(--border-dark);
+  transition: all 0.3s ease;
 }
 
 .lightning-address:hover {
-  background-color: var(--hover-bg);
-  text-decoration: underline;
-}/*# sourceMappingURL=home.css.map */
+  background-color: var(--bitcoin-orange);
+  color: var(--void);
+  box-shadow: var(--glow-soft);
+}
+
+/* === QR CODE STYLING === */
+.qr-code {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--steel);
+  border: 1px solid var(--bitcoin-orange);
+  display: inline-block;
+  box-shadow: var(--glow-soft);
+}
+
+.qr-code img {
+  display: block;
+  max-width: 200px;
+}
+
+/* === EMPTY STATE === */
+.no-articles {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--dim);
+  font-family: var(--font-tech);
+  letter-spacing: 0.1em;
+}
+
+.no-articles::before {
+  content: '> ';
+  color: var(--bitcoin-orange);
+}
+
+/* === ASCII ART DECORATION === */
+.ascii-decoration {
+  font-family: var(--font-mono);
+  color: var(--border-dark);
+  font-size: 10px;
+  line-height: 1.2;
+  white-space: pre;
+  opacity: 0.5;
+  user-select: none;
+  pointer-events: none;
+}

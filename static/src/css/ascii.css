@@ -1,0 +1,210 @@
+/* ============================================
+   BITCOIN SIGNAL - ASCII ART STYLES
+   "The aesthetics of the underground"
+   ============================================ */
+
+/* === ASCII ART BASE === */
+.ascii-logo,
+.ascii-divider,
+.ascii-bitcoin,
+.ascii-decoration {
+  font-family: var(--font-mono);
+  color: var(--bitcoin-orange);
+  line-height: 1.1;
+  white-space: pre;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ascii-logo pre,
+.ascii-divider pre,
+.ascii-bitcoin pre,
+.ascii-decoration pre {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  line-height: 1.15;
+}
+
+/* === ASCII LOGO === */
+.ascii-logo {
+  text-align: center;
+  opacity: 0.15;
+  margin: 40px 0;
+}
+
+.ascii-logo pre {
+  display: inline-block;
+  font-size: 8px;
+}
+
+@media (min-width: 768px) {
+  .ascii-logo pre {
+    font-size: 12px;
+  }
+}
+
+/* === ASCII DIVIDER === */
+.ascii-divider {
+  text-align: center;
+  opacity: 0.2;
+  margin: 60px 0;
+  overflow: hidden;
+}
+
+.ascii-divider pre {
+  font-size: 10px;
+  color: var(--border-dark);
+}
+
+/* === ASCII BITCOIN === */
+.ascii-bitcoin {
+  text-align: center;
+  opacity: 0.3;
+}
+
+.ascii-bitcoin pre {
+  display: inline-block;
+  font-size: 6px;
+  color: var(--bitcoin-orange);
+}
+
+@media (min-width: 768px) {
+  .ascii-bitcoin pre {
+    font-size: 10px;
+  }
+}
+
+/* === GLITCH EFFECT FOR ASCII === */
+@keyframes ascii-glitch {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translateX(0);
+  }
+  10% {
+    opacity: 0.2;
+    transform: translateX(-1px);
+  }
+  20% {
+    opacity: 0.1;
+    transform: translateX(1px);
+  }
+  30% {
+    opacity: 0.15;
+  }
+}
+
+.ascii-logo.glitch {
+  animation: ascii-glitch 8s ease-in-out infinite;
+}
+
+/* === TERMINAL CURSOR === */
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background-color: var(--bitcoin-orange);
+  animation: cursor-blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+@keyframes cursor-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* === MATRIX RAIN BACKGROUND (optional) === */
+.matrix-bg {
+  position: relative;
+}
+
+.matrix-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 39px,
+      rgba(247, 147, 26, 0.02) 40px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === CIRCUIT PATTERN === */
+.circuit-pattern {
+  position: relative;
+}
+
+.circuit-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80H10z' fill='none' stroke='%23f7931a' stroke-width='0.5'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%23f7931a'/%3E%3Ccircle cx='90' cy='10' r='2' fill='%23f7931a'/%3E%3Ccircle cx='10' cy='90' r='2' fill='%23f7931a'/%3E%3Ccircle cx='90' cy='90' r='2' fill='%23f7931a'/%3E%3Cpath d='M50 10v30M10 50h30M90 50h-30M50 90v-30' stroke='%23f7931a' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='3' fill='none' stroke='%23f7931a' stroke-width='0.5'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* === BROADCAST INDICATOR === */
+.broadcast-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-tech);
+  font-size: 11px;
+  color: var(--bitcoin-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.broadcast-indicator::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--bitcoin-orange);
+  border-radius: 50%;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(247, 147, 26, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(247, 147, 26, 0);
+  }
+}
+
+/* === COORDINATES / METADATA STYLE === */
+.meta-coords {
+  font-family: var(--font-tech);
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+}
+
+.meta-coords::before {
+  content: '[';
+  color: var(--bitcoin-orange);
+  opacity: 0.5;
+}
+
+.meta-coords::after {
+  content: ']';
+  color: var(--bitcoin-orange);
+  opacity: 0.5;
+}

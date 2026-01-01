@@ -1,0 +1,69 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Matrix Data Rain - Vertical streams of characters -->
+  <defs>
+    <linearGradient id="stream-fade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7931a" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#f7931a" stop-opacity="0.4"/>
+      <stop offset="80%" stop-color="#f7931a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f7931a" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#080808" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#030303" stop-opacity="1"/>
+    </radialGradient>
+    <pattern id="scanline" width="2" height="2" patternUnits="userSpaceOnUse">
+      <rect width="2" height="1" fill="#000" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="#030303"/>
+
+  <!-- Data streams - vertical columns of binary/hex -->
+  <g font-family="monospace" font-size="11" fill="#f7931a">
+    <!-- Stream 1 -->
+    <text x="50" opacity="0.15"><tspan x="50" y="30">0</tspan><tspan x="50" y="50">1</tspan><tspan x="50" y="70">1</tspan><tspan x="50" y="90">0</tspan><tspan x="50" y="110">1</tspan><tspan x="50" y="130">0</tspan><tspan x="50" y="150">0</tspan><tspan x="50" y="170">1</tspan><tspan x="50" y="190">1</tspan><tspan x="50" y="210">0</tspan><tspan x="50" y="230">1</tspan><tspan x="50" y="250">1</tspan><tspan x="50" y="270">0</tspan><tspan x="50" y="290">0</tspan><tspan x="50" y="310">1</tspan><tspan x="50" y="330">0</tspan><tspan x="50" y="350">1</tspan><tspan x="50" y="370">1</tspan><tspan x="50" y="390">0</tspan><tspan x="50" y="410">1</tspan><tspan x="50" y="430">0</tspan></text>
+
+    <!-- Stream 2 -->
+    <text x="100" opacity="0.25"><tspan x="100" y="45">1</tspan><tspan x="100" y="65">0</tspan><tspan x="100" y="85">1</tspan><tspan x="100" y="105">1</tspan><tspan x="100" y="125">0</tspan><tspan x="100" y="145">1</tspan><tspan x="100" y="165">0</tspan><tspan x="100" y="185">0</tspan><tspan x="100" y="205">1</tspan><tspan x="100" y="225">1</tspan><tspan x="100" y="245">0</tspan><tspan x="100" y="265">1</tspan><tspan x="100" y="285">0</tspan><tspan x="100" y="305">1</tspan><tspan x="100" y="325">1</tspan><tspan x="100" y="345">0</tspan><tspan x="100" y="365">0</tspan><tspan x="100" y="385">1</tspan><tspan x="100" y="405">0</tspan></text>
+
+    <!-- Stream 3 - hex values -->
+    <text x="170" opacity="0.2"><tspan x="170" y="20">A</tspan><tspan x="170" y="40">F</tspan><tspan x="170" y="60">3</tspan><tspan x="170" y="80">B</tspan><tspan x="170" y="100">7</tspan><tspan x="170" y="120">C</tspan><tspan x="170" y="140">2</tspan><tspan x="170" y="160">E</tspan><tspan x="170" y="180">9</tspan><tspan x="170" y="200">1</tspan><tspan x="170" y="220">D</tspan><tspan x="170" y="240">4</tspan><tspan x="170" y="260">8</tspan><tspan x="170" y="280">0</tspan><tspan x="170" y="300">6</tspan><tspan x="170" y="320">A</tspan><tspan x="170" y="340">5</tspan><tspan x="170" y="360">F</tspan><tspan x="170" y="380">B</tspan><tspan x="170" y="400">3</tspan><tspan x="170" y="420">7</tspan></text>
+
+    <!-- Stream 4 -->
+    <text x="250" opacity="0.12"><tspan x="250" y="60">0</tspan><tspan x="250" y="80">1</tspan><tspan x="250" y="100">0</tspan><tspan x="250" y="120">0</tspan><tspan x="250" y="140">1</tspan><tspan x="250" y="160">1</tspan><tspan x="250" y="180">0</tspan><tspan x="250" y="200">1</tspan><tspan x="250" y="220">0</tspan><tspan x="250" y="240">1</tspan><tspan x="250" y="260">1</tspan><tspan x="250" y="280">0</tspan><tspan x="250" y="300">0</tspan><tspan x="250" y="320">1</tspan><tspan x="250" y="340">0</tspan><tspan x="250" y="360">1</tspan><tspan x="250" y="380">1</tspan><tspan x="250" y="400">0</tspan></text>
+
+    <!-- Stream 5 - brighter highlight stream -->
+    <text x="320" opacity="0.35"><tspan x="320" y="35">1</tspan><tspan x="320" y="55">1</tspan><tspan x="320" y="75">0</tspan><tspan x="320" y="95">1</tspan><tspan x="320" y="115">0</tspan><tspan x="320" y="135">0</tspan><tspan x="320" y="155">1</tspan><tspan x="320" y="175">0</tspan><tspan x="320" y="195">1</tspan><tspan x="320" y="215">1</tspan><tspan x="320" y="235">1</tspan><tspan x="320" y="255">0</tspan><tspan x="320" y="275">0</tspan><tspan x="320" y="295">1</tspan><tspan x="320" y="315">1</tspan><tspan x="320" y="335">0</tspan><tspan x="320" y="355">1</tspan><tspan x="320" y="375">0</tspan><tspan x="320" y="395">0</tspan><tspan x="320" y="415">1</tspan></text>
+
+    <!-- Stream 6 -->
+    <text x="400" opacity="0.18"><tspan x="400" y="25">C</tspan><tspan x="400" y="45">4</tspan><tspan x="400" y="65">A</tspan><tspan x="400" y="85">9</tspan><tspan x="400" y="105">E</tspan><tspan x="400" y="125">2</tspan><tspan x="400" y="145">7</tspan><tspan x="400" y="165">B</tspan><tspan x="400" y="185">0</tspan><tspan x="400" y="205">5</tspan><tspan x="400" y="225">D</tspan><tspan x="400" y="245">8</tspan><tspan x="400" y="265">3</tspan><tspan x="400" y="285">F</tspan><tspan x="400" y="305">1</tspan><tspan x="400" y="325">6</tspan><tspan x="400" y="345">A</tspan><tspan x="400" y="365">C</tspan><tspan x="400" y="385">9</tspan><tspan x="400" y="405">4</tspan><tspan x="400" y="425">E</tspan></text>
+
+    <!-- Stream 7 -->
+    <text x="480" opacity="0.22"><tspan x="480" y="50">0</tspan><tspan x="480" y="70">1</tspan><tspan x="480" y="90">1</tspan><tspan x="480" y="110">0</tspan><tspan x="480" y="130">0</tspan><tspan x="480" y="150">1</tspan><tspan x="480" y="170">0</tspan><tspan x="480" y="190">1</tspan><tspan x="480" y="210">1</tspan><tspan x="480" y="230">1</tspan><tspan x="480" y="250">0</tspan><tspan x="480" y="270">0</tspan><tspan x="480" y="290">1</tspan><tspan x="480" y="310">0</tspan><tspan x="480" y="330">1</tspan><tspan x="480" y="350">0</tspan><tspan x="480" y="370">1</tspan><tspan x="480" y="390">1</tspan><tspan x="480" y="410">0</tspan></text>
+
+    <!-- Stream 8 -->
+    <text x="550" opacity="0.14"><tspan x="550" y="40">1</tspan><tspan x="550" y="60">0</tspan><tspan x="550" y="80">0</tspan><tspan x="550" y="100">1</tspan><tspan x="550" y="120">1</tspan><tspan x="550" y="140">0</tspan><tspan x="550" y="160">1</tspan><tspan x="550" y="180">0</tspan><tspan x="550" y="200">0</tspan><tspan x="550" y="220">1</tspan><tspan x="550" y="240">1</tspan><tspan x="550" y="260">1</tspan><tspan x="550" y="280">0</tspan><tspan x="550" y="300">0</tspan><tspan x="550" y="320">1</tspan><tspan x="550" y="340">0</tspan><tspan x="550" y="360">1</tspan><tspan x="550" y="380">1</tspan><tspan x="550" y="400">0</tspan><tspan x="550" y="420">1</tspan></text>
+
+    <!-- Stream 9 - hex -->
+    <text x="630" opacity="0.2"><tspan x="630" y="30">F</tspan><tspan x="630" y="50">2</tspan><tspan x="630" y="70">8</tspan><tspan x="630" y="90">A</tspan><tspan x="630" y="110">5</tspan><tspan x="630" y="130">1</tspan><tspan x="630" y="150">D</tspan><tspan x="630" y="170">9</tspan><tspan x="630" y="190">3</tspan><tspan x="630" y="210">C</tspan><tspan x="630" y="230">7</tspan><tspan x="630" y="250">0</tspan><tspan x="630" y="270">E</tspan><tspan x="630" y="290">4</tspan><tspan x="630" y="310">B</tspan><tspan x="630" y="330">6</tspan><tspan x="630" y="350">A</tspan><tspan x="630" y="370">2</tspan><tspan x="630" y="390">F</tspan><tspan x="630" y="410">8</tspan></text>
+
+    <!-- Stream 10 -->
+    <text x="700" opacity="0.16"><tspan x="700" y="55">1</tspan><tspan x="700" y="75">1</tspan><tspan x="700" y="95">0</tspan><tspan x="700" y="115">0</tspan><tspan x="700" y="135">1</tspan><tspan x="700" y="155">0</tspan><tspan x="700" y="175">1</tspan><tspan x="700" y="195">1</tspan><tspan x="700" y="215">0</tspan><tspan x="700" y="235">1</tspan><tspan x="700" y="255">0</tspan><tspan x="700" y="275">0</tspan><tspan x="700" y="295">1</tspan><tspan x="700" y="315">1</tspan><tspan x="700" y="335">0</tspan><tspan x="700" y="355">1</tspan><tspan x="700" y="375">0</tspan><tspan x="700" y="395">1</tspan></text>
+
+    <!-- Stream 11 -->
+    <text x="760" opacity="0.12"><tspan x="760" y="35">0</tspan><tspan x="760" y="55">1</tspan><tspan x="760" y="75">0</tspan><tspan x="760" y="95">1</tspan><tspan x="760" y="115">1</tspan><tspan x="760" y="135">0</tspan><tspan x="760" y="155">0</tspan><tspan x="760" y="175">1</tspan><tspan x="760" y="195">1</tspan><tspan x="760" y="215">0</tspan><tspan x="760" y="235">1</tspan><tspan x="760" y="255">0</tspan><tspan x="760" y="275">1</tspan><tspan x="760" y="295">1</tspan><tspan x="760" y="315">0</tspan><tspan x="760" y="335">0</tspan><tspan x="760" y="355">1</tspan><tspan x="760" y="375">0</tspan><tspan x="760" y="395">1</tspan><tspan x="760" y="415">1</tspan></text>
+  </g>
+
+  <!-- Horizontal scan line effect -->
+  <rect width="800" height="450" fill="url(#scanline)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#f7931a" stroke-width="1" opacity="0.2" fill="none">
+    <path d="M 20 20 L 20 45 M 20 20 L 45 20"/>
+    <path d="M 780 20 L 780 45 M 780 20 L 755 20"/>
+    <path d="M 20 430 L 20 405 M 20 430 L 45 430"/>
+    <path d="M 780 430 L 780 405 M 780 430 L 755 430"/>
+  </g>
+
+  <rect width="800" height="450" fill="url(#vignette)"/>
+</svg>

@@ -1,0 +1,81 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagonal PCB Pattern - Like a honeycomb circuit board -->
+  <defs>
+    <!-- Single hexagon shape -->
+    <polygon id="hex" points="30,0 60,17.3 60,52 30,69.3 0,52 0,17.3" fill="none" stroke="#f7931a" stroke-width="0.5"/>
+
+    <pattern id="hexgrid" width="90" height="104" patternUnits="userSpaceOnUse">
+      <!-- Row 1 -->
+      <use href="#hex" x="0" y="0" opacity="0.15"/>
+      <use href="#hex" x="90" y="0" opacity="0.15"/>
+      <!-- Row 2 (offset) -->
+      <use href="#hex" x="45" y="52" opacity="0.15"/>
+      <!-- Node points at hex centers -->
+      <circle cx="30" cy="34.6" r="2" fill="#f7931a" opacity="0.3"/>
+      <circle cx="75" cy="86.6" r="2" fill="#f7931a" opacity="0.3"/>
+      <!-- Connecting traces -->
+      <line x1="30" y1="34.6" x2="75" y2="86.6" stroke="#f7931a" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#f7931a" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#f7931a" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a0a0a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#030303" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="#060606"/>
+
+  <!-- Hex grid pattern -->
+  <rect width="800" height="450" fill="url(#hexgrid)"/>
+
+  <!-- Central highlighted hexagon cluster -->
+  <g transform="translate(400, 225)" fill="none" stroke="#f7931a">
+    <!-- Center hex - brightest -->
+    <polygon points="40,0 80,23 80,69 40,92 0,69 0,23" opacity="0.4" stroke-width="1"/>
+
+    <!-- Ring 1 - surrounding hexes -->
+    <polygon points="40,-92 80,-69 80,-23 40,0 0,-23 0,-69" opacity="0.2" stroke-width="0.7" transform="translate(0, 0)"/>
+    <polygon points="40,92 80,115 80,161 40,184 0,161 0,115" opacity="0.2" stroke-width="0.7" transform="translate(0, 0)"/>
+    <polygon points="-60,46 -20,69 -20,115 -60,138 -100,115 -100,69" opacity="0.2" stroke-width="0.7" transform="translate(0, -46)"/>
+    <polygon points="140,46 180,69 180,115 140,138 100,115 100,69" opacity="0.2" stroke-width="0.7" transform="translate(0, -46)"/>
+    <polygon points="-60,46 -20,69 -20,115 -60,138 -100,115 -100,69" opacity="0.2" stroke-width="0.7" transform="translate(0, 46)"/>
+    <polygon points="140,46 180,69 180,115 140,138 100,115 100,69" opacity="0.2" stroke-width="0.7" transform="translate(0, 46)"/>
+
+    <!-- Center node cluster -->
+    <circle cx="40" cy="46" r="8" fill="#f7931a" opacity="0.3"/>
+    <circle cx="40" cy="46" r="4" fill="#f7931a" opacity="0.5"/>
+    <circle cx="40" cy="46" r="2" fill="#f7931a" opacity="0.8"/>
+
+    <!-- Trace lines from center -->
+    <g stroke-width="0.5" opacity="0.25">
+      <line x1="40" y1="46" x2="40" y2="-30"/>
+      <line x1="40" y1="46" x2="40" y2="122"/>
+      <line x1="40" y1="46" x2="-40" y2="0"/>
+      <line x1="40" y1="46" x2="120" y2="0"/>
+      <line x1="40" y1="46" x2="-40" y2="92"/>
+      <line x1="40" y1="46" x2="120" y2="92"/>
+    </g>
+  </g>
+
+  <!-- Subtle center glow -->
+  <ellipse cx="400" cy="225" rx="200" ry="150" fill="url(#center-glow)"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#f7931a" stroke-width="1" opacity="0.2" fill="none">
+    <path d="M 20 20 L 20 50 M 20 20 L 50 20"/>
+    <path d="M 780 20 L 780 50 M 780 20 L 750 20"/>
+    <path d="M 20 430 L 20 400 M 20 430 L 50 430"/>
+    <path d="M 780 430 L 780 400 M 780 430 L 750 430"/>
+  </g>
+
+  <!-- Coordinate hint -->
+  <text x="60" y="430" font-family="monospace" font-size="9" fill="#f7931a" opacity="0.12" letter-spacing="0.2em">NODE::ACTIVE</text>
+  <text x="680" y="430" font-family="monospace" font-size="9" fill="#f7931a" opacity="0.12" letter-spacing="0.2em">HEX::GRID</text>
+
+  <rect width="800" height="450" fill="url(#vignette)"/>
+</svg>
