@@ -1,102 +1,145 @@
-/* Bitcoin Signal Admin Panel - Custom Styles */
-/* Matches the front-end Citadel21-inspired dark theme */
+/* ============================================
+   BITCOIN SIGNAL - ADMIN PANEL
+   "Command center in the bunker"
+   ============================================ */
+
+/* Import design system fonts */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&family=Share+Tech+Mono&display=swap');
 
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --bg-card: #141414;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
+  /* === DEPTHS (backgrounds) === */
+  --void: #030303;
+  --bunker: #080808;
+  --concrete: #0f0f0f;
+  --steel: #161616;
+
+  /* === SIGNAL (accents) === */
   --bitcoin-orange: #f7931a;
-  --border-color: #2a2a2a;
-  --hover-bg: #1f1f1f;
+  --neon-orange: #ff6b00;
+
+  /* === STATIC (text) === */
+  --white: #e0e0e0;
+  --gray: #888888;
+  --dim: #444444;
+
+  /* === BORDERS === */
+  --border-dark: #1a1a1a;
+  --border-glow: rgba(247, 147, 26, 0.3);
+
+  /* === EFFECTS === */
+  --glow-soft: 0 0 10px rgba(247, 147, 26, 0.3);
+  --glow-medium: 0 0 20px rgba(247, 147, 26, 0.4), 0 0 40px rgba(247, 147, 26, 0.2);
+
+  /* === TYPOGRAPHY === */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tech: 'Share Tech Mono', monospace;
 }
 
-/* Override Decap CMS default styles */
+/* === BASE === */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  background-color: var(--bg-primary) !important;
-  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  background-color: var(--bunker) !important;
+  color: var(--white) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Top bar / Header */
+/* === TOP BAR / HEADER === */
 [class*="AppHeader"] {
-  background-color: var(--bg-primary) !important;
-  border-bottom: 1px solid var(--border-color) !important;
-  color: var(--text-primary) !important;
+  background-color: var(--void) !important;
+  border-bottom: 1px solid var(--border-dark) !important;
 }
 
 [class*="AppHeader"] h1,
 [class*="AppHeader"] a,
-[class*="AppHeader"] button {
-  color: var(--text-primary) !important;
+[class*="AppHeader"] span {
+  font-family: var(--font-mono) !important;
+  color: var(--white) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
 }
 
 [class*="AppHeader"] a:hover,
 [class*="AppHeader"] button:hover {
   color: var(--bitcoin-orange) !important;
+  text-shadow: var(--glow-soft) !important;
 }
 
-/* Sidebar */
+/* === SIDEBAR === */
 [class*="Sidebar"],
 [class*="SidebarContainer"] {
-  background-color: var(--bg-secondary) !important;
-  border-right: 1px solid var(--border-color) !important;
+  background-color: var(--void) !important;
+  border-right: 1px solid var(--border-dark) !important;
 }
 
 [class*="SidebarLink"],
 [class*="NavLink"] {
-  color: var(--text-secondary) !important;
-  transition: color 0.2s ease, background-color 0.2s ease !important;
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--gray) !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
 }
 
 [class*="SidebarLink"]:hover,
 [class*="NavLink"]:hover {
   color: var(--bitcoin-orange) !important;
-  background-color: var(--hover-bg) !important;
+  background-color: var(--steel) !important;
+  text-shadow: var(--glow-soft) !important;
 }
 
 [class*="SidebarLink"][class*="active"],
 [class*="NavLink"][class*="active"] {
   color: var(--bitcoin-orange) !important;
-  background-color: var(--hover-bg) !important;
+  background-color: var(--steel) !important;
+  border-left: 3px solid var(--bitcoin-orange) !important;
 }
 
-/* Main content area */
+/* === MAIN CONTENT === */
 [class*="MainContent"],
 [class*="EntryEditor"],
 [class*="CollectionView"] {
-  background-color: var(--bg-primary) !important;
-  color: var(--text-primary) !important;
+  background-color: var(--bunker) !important;
 }
 
-/* Cards */
+/* === CARDS === */
 [class*="Card"],
 [class*="EntryCard"],
 [class*="CollectionCard"] {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-  transition: transform 0.2s ease, border-color 0.2s ease !important;
+  background-color: var(--concrete) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-left: 3px solid var(--bitcoin-orange) !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
 }
 
 [class*="Card"]:hover,
 [class*="EntryCard"]:hover,
 [class*="CollectionCard"]:hover {
-  transform: translateY(-4px) !important;
   border-color: var(--bitcoin-orange) !important;
+  box-shadow: var(--glow-soft) !important;
+  transform: translateY(-2px) !important;
 }
 
-/* Buttons */
+/* === BUTTONS === */
 button,
 [class*="Button"],
 [type="button"],
 [type="submit"] {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-  font-weight: 500 !important;
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  background-color: transparent !important;
+  color: var(--white) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
+  padding: 10px 16px !important;
+  cursor: pointer !important;
   transition: all 0.2s ease !important;
 }
 
@@ -104,37 +147,43 @@ button:hover,
 [class*="Button"]:hover,
 [type="button"]:hover,
 [type="submit"]:hover {
-  background-color: var(--hover-bg) !important;
   border-color: var(--bitcoin-orange) !important;
   color: var(--bitcoin-orange) !important;
+  box-shadow: var(--glow-soft) !important;
 }
 
-/* Primary/Action buttons */
+/* Primary/Action buttons - outline style */
 button[class*="primary"],
 [class*="Button"][class*="primary"],
-[class*="ActionButton"] {
-  background-color: var(--bitcoin-orange) !important;
-  color: var(--bg-primary) !important;
-  border: none !important;
+[class*="ActionButton"],
+[class*="PublishButton"] {
+  border: 1px solid var(--bitcoin-orange) !important;
+  color: var(--bitcoin-orange) !important;
+  background-color: transparent !important;
 }
 
 button[class*="primary"]:hover,
 [class*="Button"][class*="primary"]:hover,
-[class*="ActionButton"]:hover {
-  background-color: #ff9d32 !important;
-  color: var(--bg-primary) !important;
+[class*="ActionButton"]:hover,
+[class*="PublishButton"]:hover {
+  background-color: var(--bitcoin-orange) !important;
+  color: var(--void) !important;
+  box-shadow: var(--glow-medium) !important;
 }
 
-/* Input fields */
+/* === INPUT FIELDS === */
 input,
 textarea,
 select,
 [class*="Input"],
 [class*="TextField"] {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
+  font-family: var(--font-body) !important;
+  background-color: var(--steel) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
+  padding: 12px !important;
+  transition: all 0.2s ease !important;
 }
 
 input:focus,
@@ -144,284 +193,342 @@ select:focus,
 [class*="TextField"]:focus {
   border-color: var(--bitcoin-orange) !important;
   outline: none !important;
-  box-shadow: 0 0 0 2px rgba(247, 147, 26, 0.2) !important;
+  box-shadow: var(--glow-soft) !important;
 }
 
-/* Markdown editor */
+input::placeholder,
+textarea::placeholder {
+  font-family: var(--font-tech) !important;
+  color: var(--dim) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 11px !important;
+}
+
+/* === LABELS === */
+label,
+[class*="Label"] {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--gray) !important;
+}
+
+/* === MARKDOWN EDITOR === */
 [class*="MarkdownControl"],
 [class*="RichTextEditor"],
 .CodeMirror {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
+  background-color: var(--steel) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-mono) !important;
 }
 
 .CodeMirror-gutters {
-  background-color: var(--bg-card) !important;
-  border-right: 1px solid var(--border-color) !important;
+  background-color: var(--concrete) !important;
+  border-right: 1px solid var(--border-dark) !important;
 }
 
 .CodeMirror-linenumber {
-  color: var(--text-secondary) !important;
+  font-family: var(--font-tech) !important;
+  color: var(--dim) !important;
 }
 
 .CodeMirror-cursor {
-  border-left: 1px solid var(--bitcoin-orange) !important;
+  border-left: 2px solid var(--bitcoin-orange) !important;
 }
 
-/* Toolbar */
+.CodeMirror-selected {
+  background-color: rgba(247, 147, 26, 0.2) !important;
+}
+
+/* === TOOLBAR === */
 [class*="Toolbar"],
 [class*="EditorToolbar"] {
-  background-color: var(--bg-card) !important;
-  border-bottom: 1px solid var(--border-color) !important;
+  background-color: var(--concrete) !important;
+  border-bottom: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
 [class*="Toolbar"] button,
 [class*="EditorToolbar"] button {
-  color: var(--text-secondary) !important;
+  color: var(--gray) !important;
+  border: none !important;
+  padding: 8px !important;
 }
 
 [class*="Toolbar"] button:hover,
 [class*="EditorToolbar"] button:hover {
   color: var(--bitcoin-orange) !important;
-  background-color: var(--hover-bg) !important;
+  background-color: var(--steel) !important;
+  box-shadow: none !important;
 }
 
-/* Dropdowns and modals */
+/* === DROPDOWNS & MODALS === */
 [class*="Dropdown"],
 [class*="Modal"],
 [class*="Dialog"] {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-  color: var(--text-primary) !important;
+  background-color: var(--concrete) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
 }
 
 [class*="DropdownItem"]:hover,
 [class*="MenuItem"]:hover {
-  background-color: var(--hover-bg) !important;
+  background-color: var(--steel) !important;
   color: var(--bitcoin-orange) !important;
 }
 
-/* Lists */
+/* === LISTS === */
 [class*="ListCard"],
 [class*="EntryListing"] {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  color: var(--text-primary) !important;
+  background-color: var(--concrete) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
-/* Headers and titles */
+/* === HEADINGS === */
 h1, h2, h3, h4, h5, h6,
 [class*="Heading"] {
-  color: var(--text-primary) !important;
+  font-family: var(--font-mono) !important;
+  color: var(--white) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
 }
 
-/* Text and labels */
-p, span, label,
-[class*="Label"],
+/* === TEXT === */
+p, span,
 [class*="Text"] {
-  color: var(--text-primary) !important;
+  color: var(--white) !important;
 }
 
 small,
 [class*="HelpText"],
 [class*="FieldHint"] {
-  color: var(--text-secondary) !important;
+  font-family: var(--font-tech) !important;
+  font-size: 11px !important;
+  color: var(--gray) !important;
+  letter-spacing: 0.05em !important;
 }
 
-/* Links */
+/* === LINKS === */
 a {
   color: var(--bitcoin-orange) !important;
   text-decoration: none !important;
-  transition: color 0.2s ease !important;
+  transition: all 0.2s ease !important;
 }
 
 a:hover {
-  color: #ff9d32 !important;
+  color: var(--neon-orange) !important;
+  text-shadow: var(--glow-soft) !important;
 }
 
-/* Widget controls */
-[class*="ControlContainer"],
-[class*="FieldWrapper"] {
-  margin-bottom: 24px !important;
-}
-
-/* Image preview */
+/* === IMAGE PREVIEW === */
 [class*="ImagePreview"],
 [class*="MediaPreview"] {
-  background-color: var(--bg-secondary) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
+  background-color: var(--steel) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
-/* Loading states */
+/* === LOADING === */
 [class*="Loader"],
 [class*="Spinner"] {
-  border-color: var(--border-color) !important;
+  border-color: var(--border-dark) !important;
   border-top-color: var(--bitcoin-orange) !important;
 }
 
-/* Status indicators */
+/* === STATUS INDICATORS === */
 [class*="Published"],
 [class*="StatusSuccess"] {
-  background-color: rgba(34, 197, 94, 0.2) !important;
+  background-color: rgba(34, 197, 94, 0.15) !important;
   color: #4ade80 !important;
+  border-radius: 0 !important;
+  font-family: var(--font-tech) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 10px !important;
 }
 
 [class*="Draft"],
 [class*="StatusPending"] {
-  background-color: rgba(247, 147, 26, 0.2) !important;
+  background-color: rgba(247, 147, 26, 0.15) !important;
   color: var(--bitcoin-orange) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-tech) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 10px !important;
 }
 
-/* Collection grid */
-[class*="CollectionGrid"] {
-  gap: 32px !important;
-}
-
-/* Scrollbars */
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bitcoin-orange);
-}
-
-/* Workflow board */
+/* === WORKFLOW BOARD === */
 [class*="WorkflowCard"],
 [class*="BoardColumn"] {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
+  background-color: var(--concrete) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
 [class*="BoardColumn"] {
-  background-color: var(--bg-secondary) !important;
+  background-color: var(--bunker) !important;
 }
 
-/* Search bar */
+/* === SEARCH === */
 [class*="SearchInput"],
 input[type="search"] {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
+  background-color: var(--steel) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
-/* Notifications/Toasts */
+/* === NOTIFICATIONS === */
 [class*="Toast"],
 [class*="Notification"] {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-  color: var(--text-primary) !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important;
+  background-color: var(--concrete) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-left: 3px solid var(--bitcoin-orange) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
 }
 
-/* Preview pane */
+/* === PREVIEW PANE === */
 [class*="PreviewPane"],
 [class*="PreviewContainer"] {
-  background-color: var(--bg-primary) !important;
-  border-left: 1px solid var(--border-color) !important;
+  background-color: var(--bunker) !important;
+  border-left: 1px solid var(--border-dark) !important;
 }
 
-/* Tables */
+/* === TABLES === */
 table {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
+  background-color: var(--concrete) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
 th {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  border-bottom: 1px solid var(--border-color) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  background-color: var(--steel) !important;
+  color: var(--gray) !important;
+  border-bottom: 1px solid var(--border-dark) !important;
 }
 
 td {
-  color: var(--text-primary) !important;
-  border-bottom: 1px solid var(--border-color) !important;
+  color: var(--white) !important;
+  border-bottom: 1px solid var(--border-dark) !important;
 }
 
 tr:hover {
-  background-color: var(--hover-bg) !important;
+  background-color: var(--steel) !important;
 }
 
-/* Tags */
+/* === TAGS === */
 [class*="Tag"],
 [class*="Badge"] {
-  background-color: var(--bg-secondary) !important;
+  font-family: var(--font-tech) !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  background-color: var(--steel) !important;
   color: var(--bitcoin-orange) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 4px !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
-/* Checkbox and radio */
+/* === CHECKBOX & RADIO === */
 input[type="checkbox"],
 input[type="radio"] {
   accent-color: var(--bitcoin-orange) !important;
 }
 
-/* Dividers */
+/* === DIVIDERS === */
 hr,
 [class*="Divider"] {
-  border-color: var(--border-color) !important;
+  border-color: var(--border-dark) !important;
 }
 
-/* Code blocks in preview */
+/* === CODE === */
 code {
-  background-color: var(--bg-secondary) !important;
+  font-family: var(--font-mono) !important;
+  background-color: var(--steel) !important;
   color: var(--bitcoin-orange) !important;
-  padding: 2px 8px !important;
-  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  border-radius: 0 !important;
 }
 
 pre {
-  background-color: var(--bg-secondary) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-  padding: 20px !important;
+  background-color: var(--steel) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-left: 3px solid var(--bitcoin-orange) !important;
+  border-radius: 0 !important;
+  padding: 16px !important;
 }
 
-/* File upload */
+/* === FILE UPLOAD === */
 [class*="FileUpload"],
 [class*="Dropzone"] {
-  background-color: var(--bg-secondary) !important;
-  border: 2px dashed var(--border-color) !important;
-  border-radius: 8px !important;
-  color: var(--text-secondary) !important;
+  background-color: var(--steel) !important;
+  border: 2px dashed var(--border-dark) !important;
+  border-radius: 0 !important;
+  color: var(--gray) !important;
   transition: all 0.2s ease !important;
 }
 
 [class*="FileUpload"]:hover,
 [class*="Dropzone"]:hover {
   border-color: var(--bitcoin-orange) !important;
-  background-color: var(--hover-bg) !important;
+  background-color: var(--concrete) !important;
 }
 
-/* Login page */
+/* === LOGIN PAGE === */
 [class*="LoginContainer"],
 [class*="AuthForm"] {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
+  background-color: var(--concrete) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0 !important;
 }
 
-/* Ensure proper contrast */
+/* === SCROLLBARS === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bunker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bitcoin-orange);
+}
+
 * {
-  scrollbar-color: var(--border-color) var(--bg-secondary);
+  scrollbar-color: var(--border-dark) var(--bunker);
+  scrollbar-width: thin;
+}
+
+/* === COLLECTION GRID === */
+[class*="CollectionGrid"] {
+  gap: 24px !important;
+}
+
+/* === FIELD CONTAINERS === */
+[class*="ControlContainer"],
+[class*="FieldWrapper"] {
+  margin-bottom: 20px !important;
+}
+
+/* === GLOBAL OVERRIDES === */
+* {
+  border-radius: 0 !important;
 }
